@@ -1,55 +1,1509 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Sugam Dangal Official Website</title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->
-        <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
-    </head>
-    <body id="page-top">
-        <!-- Masthead-->
-        <header class="masthead bg-primary text-white text-center" style="
-        padding-bottom: 198px;">
-            <div class="container d-flex align-items-center flex-column">
-                <!-- Masthead Avatar Image-->
-                <img class="masthead-avatar mb-5" src="brp.jpg" alt="..." />
-                <!-- Masthead Heading-->
-                <h1 class="masthead-heading text-uppercase mb-0">Sugam Dangal</h1>
-                <!-- Masthead Subheading-->
-                <p class="masthead-subheading font-weight-light mb-0">Cyber Security Student</p>
-                <nav>
-                    
-                    <a href="https://www.facebook.com/ichbinsugamdangal"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://github.com/profsug"><i class="fab fa-github"></i></a>
-                    <a href=" https://www.linkedin.com/in/sugam-dangal-79717021b/"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://twitter.com/SugamDangal2"><i class="fab fa-twitter"></i></a>
-                   
-                </nav>
-              
-               
-            </div>
-        </header>
-        <!-- Copyright Section-->
-        <div class="copyright py-4 text-center text-white">
-            <div class="container"><small>Copyright &copy; 2024 Sugam Dangal</small></div>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sugam Dangal — Cybersecurity Professional</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  :root {
+    --bg: #060a0f;
+    --surface: #0d1520;
+    --surface2: #111d2e;
+    --border: rgba(0,200,255,0.12);
+    --accent: #00c8ff;
+    --accent2: #00ff9d;
+    --accent3: #ff4e6a;
+    --text: #e2eaf5;
+    --muted: #6b8cae;
+    --glow: rgba(0,200,255,0.18);
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 20px;
+    overflow-x: hidden;
+    cursor: none;
+  }
+
+  /* Custom Cursor */
+  #cursor {
+    position: fixed;
+    width: 12px; height: 12px;
+    background: var(--accent);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: transform 0.08s, width 0.2s, height 0.2s, background 0.2s;
+    mix-blend-mode: screen;
+  }
+  #cursor-ring {
+    position: fixed;
+    width: 40px; height: 40px;
+    border: 1px solid var(--accent);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: transform 0.18s ease, width 0.2s, height 0.2s, opacity 0.2s;
+    opacity: 0.5;
+  }
+  body:hover #cursor { opacity: 1; }
+
+  /* Scanline overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0,0,0,0.04) 2px,
+      rgba(0,0,0,0.04) 4px
+    );
+    pointer-events: none;
+    z-index: 1000;
+  }
+
+  /* Noise texture */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    opacity: 0.3;
+    pointer-events: none;
+    z-index: 999;
+  }
+
+  /* Nav */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 500;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 3rem;
+    backdrop-filter: blur(20px);
+    background: rgba(6,10,15,0.7);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 800;
+    font-size: 1.3rem;
+    letter-spacing: 0.05em;
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .nav-logo span { color: var(--text); }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+  .nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+    position: relative;
+  }
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 0; bottom: -3px;
+    width: 0; height: 1px;
+    background: var(--accent);
+    transition: width 0.3s;
+  }
+  .nav-links a:hover { color: var(--accent); }
+  .nav-links a:hover::after { width: 100%; }
+
+  /* Status pill */
+  .status-pill {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    color: var(--accent2);
+    border: 1px solid rgba(0,255,157,0.2);
+    padding: 0.3rem 0.8rem;
+    border-radius: 100px;
+    background: rgba(0,255,157,0.05);
+  }
+  .status-dot {
+    width: 6px; height: 6px;
+    background: var(--accent2);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.7); }
+  }
+
+  /* Sections */
+  section { padding: 6rem 2rem; max-width: 1600px; width: 100%; margin: 0 auto; }
+
+  /* HERO */
+  #hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 5rem;
+    max-width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 80% 50%, rgba(0,200,255,0.06) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 60% at 20% 80%, rgba(0,255,157,0.04) 0%, transparent 60%);
+  }
+
+  /* Grid lines */
+  .grid-lines {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(0,200,255,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,200,255,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 2rem;
+    max-width: 1600px;
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .hero-copy {
+    min-width: 0;
+  }
+
+  .hero-photo-wrap {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero-photo-frame {
+    width: min(420px, 100%);
+    aspect-ratio: 1 / 1.15;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 18px 40px rgba(1,5,18,0.35);
+  }
+
+  .hero-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    filter: saturate(1.02) contrast(1.02);
+  }
+
+  .hero-eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    animation: fadeUp 0.8s ease both;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    width: 40px; height: 1px;
+    background: var(--accent);
+  }
+
+  .hero-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 800;
+    font-size: clamp(3rem, 8vw, 7rem);
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.5rem;
+    animation: fadeUp 0.8s 0.1s ease both;
+  }
+  .hero-name .line2 {
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255,255,255,0.3);
+  }
+
+  .hero-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 2rem;
+    animation: fadeUp 0.8s 0.2s ease both;
+  }
+
+  .hero-desc {
+    max-width: 520px;
+    color: var(--muted);
+    line-height: 1.8;
+    font-size: 1.15rem;
+    margin-bottom: 3rem;
+    animation: fadeUp 0.8s 0.3s ease both;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    animation: fadeUp 0.8s 0.4s ease both;
+  }
+
+  .btn {
+    padding: 0.85rem 2rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.25s;
+    cursor: none;
+  }
+  .btn-primary {
+    background: var(--accent);
+    color: var(--bg);
+    font-weight: 500;
+    border: 1px solid var(--accent);
+  }
+  .btn-primary:hover {
+    background: transparent;
+    color: var(--accent);
+    box-shadow: 0 0 30px var(--glow);
+  }
+  .btn-ghost {
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--border);
+  }
+  .btn-ghost:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .hero-contacts {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 3rem;
+    animation: fadeUp 0.8s 0.5s ease both;
+  }
+  .hero-contacts a {
+    color: var(--muted);
+    font-size: 1rem;
+    transition: color 0.2s, transform 0.2s;
+    text-decoration: none;
+  }
+  .hero-contacts a:hover {
+    color: var(--accent);
+    transform: translateY(-2px);
+  }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 2rem;
+    right: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--muted);
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    animation: fadeIn 1s 1s ease both;
+  }
+  .scroll-line {
+    width: 1px;
+    height: 50px;
+    background: linear-gradient(to bottom, var(--accent), transparent);
+    animation: scrollLine 1.5s ease-in-out infinite;
+  }
+  @keyframes scrollLine {
+    0% { transform: scaleY(0); transform-origin: top; }
+    50% { transform: scaleY(1); transform-origin: top; }
+    51% { transform-origin: bottom; }
+    100% { transform: scaleY(0); transform-origin: bottom; }
+  }
+
+  /* Terminal-style tag */
+  .terminal-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: rgba(0,200,255,0.06);
+    border: 1px solid var(--border);
+    padding: 0.3rem 0.7rem;
+    border-radius: 3px;
+    font-size: 0.68rem;
+    color: var(--accent2);
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+    margin-right: 0.5rem;
+    display: inline-flex;
+  }
+  .terminal-tag::before { content: '▸ '; color: var(--accent); }
+
+  /* Section header */
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 3.5rem;
+  }
+  .section-num {
+    font-size: 0.65rem;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+  .section-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    letter-spacing: -0.02em;
+  }
+  .section-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, var(--border), transparent);
+  }
+
+  /* About */
+  #about { padding-top: 8rem; }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+  .about-text {
+    color: var(--muted);
+    line-height: 1.9;
+    font-size: 1.15rem;
+  }
+  .about-text p { margin-bottom: 1rem; }
+  .about-highlight {
+    color: var(--text);
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.2rem;
+    border-left: 2px solid var(--accent);
+    padding-left: 1rem;
+    margin: 1.5rem 0;
+    line-height: 1.6;
+  }
+
+  .about-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .stat-item {
+    background: var(--surface);
+    padding: 1.5rem;
+    transition: background 0.2s;
+  }
+  .stat-item:hover { background: var(--surface2); }
+  .stat-num {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+  .stat-label {
+    font-size: 0.65rem;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* Experience */
+  .exp-list { display: flex; flex-direction: column; gap: 1.5px; }
+
+  .exp-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: border-color 0.3s;
+    cursor: none;
+  }
+  .exp-item:hover { border-color: rgba(0,200,255,0.3); }
+  .exp-item.active { border-color: var(--accent); }
+
+  .exp-header {
+    padding: 1.5rem 2rem;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  .exp-icon {
+    width: 44px; height: 44px;
+    border-radius: 10px;
+    background: rgba(0,200,255,0.08);
+    border: 1px solid var(--border);
+    display: grid;
+    place-items: center;
+    font-size: 1rem;
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+
+  .exp-meta { min-width: 0; }
+  .exp-role {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    margin-bottom: 0.2rem;
+  }
+  .exp-company {
+    font-size: 0.95rem;
+    color: var(--accent2);
+    letter-spacing: 0.05em;
+    margin-bottom: 0.3rem;
+  }
+  .exp-loc {
+    font-size: 0.65rem;
+    color: var(--muted);
+  }
+
+  .exp-date {
+    font-size: 0.8rem;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    text-align: right;
+    white-space: nowrap;
+  }
+  .exp-current {
+    color: var(--accent2);
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    justify-content: flex-end;
+  }
+
+  .exp-body {
+    padding: 0 2rem 1.5rem;
+    display: none;
+  }
+  .exp-item.active .exp-body { display: block; }
+  .exp-divider {
+    height: 1px;
+    background: var(--border);
+    margin-bottom: 1.5rem;
+  }
+
+  .exp-bullets { list-style: none; }
+  .exp-bullets li {
+    font-size: 1.0rem;
+    color: var(--muted);
+    line-height: 1.8;
+    padding-left: 1.2rem;
+    position: relative;
+    margin-bottom: 0.3rem;
+  }
+  .exp-bullets li::before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+  }
+
+  .exp-chevron {
+    margin-left: 1rem;
+    color: var(--muted);
+    transition: transform 0.3s;
+    font-size: 0.8rem;
+  }
+  .exp-item.active .exp-chevron { transform: rotate(180deg); color: var(--accent); }
+
+  /* Skills */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+  }
+
+  .skill-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.5rem;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  .skill-card-wide {
+    grid-column: span 2;
+  }
+  .skill-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(to right, var(--accent), transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .skill-card:hover { border-color: rgba(0,200,255,0.25); transform: translateY(-3px); }
+  .skill-card:hover::before { opacity: 1; }
+
+  .skill-icon {
+    width: 38px; height: 38px;
+    background: rgba(0,200,255,0.08);
+    border-radius: 8px;
+    display: grid;
+    place-items: center;
+    color: var(--accent);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+  .skill-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+  }
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+  .skill-tag {
+    font-size: 1.0rem;
+    color: var(--muted);
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border);
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+    letter-spacing: 0.05em;
+  }
+
+  /* Certifications */
+  .certs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+  }
+
+  .cert-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.8rem;
+    transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .cert-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; right: 0;
+    width: 80px; height: 80px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0,200,255,0.06), transparent);
+    transform: translate(30%, 30%);
+  }
+  .cert-card:hover { border-color: rgba(0,200,255,0.3); transform: translateY(-3px); box-shadow: 0 10px 40px rgba(0,0,0,0.3); }
+
+  .cert-badge {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: rgba(0,200,255,0.08);
+    border: 1px solid rgba(0,200,255,0.2);
+    display: grid;
+    place-items: center;
+    font-size: 1rem;
+    color: var(--accent);
+  }
+  .cert-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    line-height: 1.3;
+  }
+  .cert-abbr {
+    font-size: 1.05rem;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .cert-desc {
+    font-size: 1.0rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* Education */
+  .edu-list { display: flex; flex-direction: column; gap: 1rem; }
+  .edu-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.5rem;
+    align-items: start;
+    transition: all 0.3s;
+  }
+  .edu-item:hover { border-color: rgba(0,200,255,0.25); }
+
+  .edu-icon {
+    width: 48px; height: 48px;
+    border-radius: 50%;
+    background: rgba(0,200,255,0.06);
+    border: 1px solid var(--border);
+    display: grid;
+    place-items: center;
+    color: var(--accent);
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+  .edu-degree {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    margin-bottom: 0.3rem;
+  }
+  .edu-school {
+    font-size: 1rem;
+    color: var(--accent2);
+    margin-bottom: 0.3rem;
+  }
+  .edu-date-loc {
+    font-size: 0.85rem;
+    color: var(--muted);
+    display: flex;
+    gap: 1rem;
+  }
+
+  /* Awards */
+  .award-card {
+    background: var(--surface);
+    border: 1px solid rgba(255,200,0,0.2);
+    border-radius: 10px;
+    padding: 2rem 2.5rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .award-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at left, rgba(255,200,0,0.04), transparent 60%);
+  }
+  .award-icon-wrap {
+    width: 60px; height: 60px;
+    border-radius: 50%;
+    background: rgba(255,200,0,0.08);
+    border: 1px solid rgba(255,200,0,0.3);
+    display: grid;
+    place-items: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    position: relative;
+  }
+  .award-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 1.2 rem;
+    margin-bottom: 0.3rem;
+    color: #ffc800;
+  }
+  .award-org {
+    font-size: 1.0rem;
+    color: var(--muted);
+    margin-bottom: 0.5rem;
+  }
+  .award-desc {
+    font-size: 1.05rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* Contact */
+  .contact-shell {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    margin: 0 auto 4rem;
+    max-width: 1550px;
+    padding: 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .contact-shell::before {
+    content: '';
+    position: absolute;
+    top: -50%; right: -10%;
+    width: 400px; height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0,200,255,0.06), transparent 70%);
+    pointer-events: none;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .contact-text .section-title { margin-bottom: 1rem; }
+  .contact-sub {
+    font-size: 1.15rem;
+    color: var(--muted);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+  }
+
+  .contact-links { display: flex; flex-direction: column; gap: 0.8rem; }
+  .contact-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.2rem;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--text);
+    font-size: 1.0rem;
+    transition: all 0.2s;
+    cursor: none;
+  }
+  .contact-link:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: translateX(4px);
+  }
+  .contact-link i {
+    color: var(--accent);
+    font-size: 1.3rem;
+    width: 20px;
+    text-align: center;
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--muted);
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    border-top: 1px solid var(--border);
+  }
+
+  /* Animations */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Glitch effect on name */
+  .glitch {
+    position: relative;
+    display: inline-block;
+  }
+  .glitch:hover::before,
+  .glitch:hover::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+  }
+  .glitch:hover::before {
+    color: var(--accent);
+    animation: glitch1 0.3s ease infinite;
+    clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
+  }
+  .glitch:hover::after {
+    color: var(--accent3);
+    animation: glitch2 0.4s ease infinite;
+    clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
+  }
+  @keyframes glitch1 {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(-3px); }
+  }
+  @keyframes glitch2 {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(3px); }
+  }
+
+  /* Tools marquee */
+  .tools-marquee {
+    overflow: hidden;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 0;
+    margin: 2rem 0;
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  }
+  .marquee-track {
+    display: flex;
+    gap: 2.5rem;
+    animation: marquee 20s linear infinite;
+    white-space: nowrap;
+  }
+  .marquee-track:hover { animation-play-state: paused; }
+  .marquee-item {
+    font-size: 0.68rem;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-shrink: 0;
+  }
+  .marquee-item span {
+    width: 4px; height: 4px;
+    border-radius: 50%;
+    background: var(--accent);
+    display: inline-block;
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    section { padding: 4rem 1.5rem; }
+    .hero-content { padding: 0 1.5rem; grid-template-columns: 1fr; gap: 2rem; }
+    .hero-scroll { display: none; }
+    .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .skill-card-wide { grid-column: span 1; }
+    .exp-header { grid-template-columns: auto 1fr; }
+    .exp-date { display: none; }
+    .contact-shell { margin: 0 auto 3rem; padding: 2rem; }
+  }
+</style>
+</head>
+<body>
+
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-logo">SD<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#hero">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#certifications">Certs</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#awards">Awards</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="status-pill">
+    <span class="status-dot"></span>
+    SOC Analyst · Active
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="grid-lines"></div>
+  <div class="hero-content">
+    <div class="hero-copy">
+      <div class="hero-eyebrow">Cybersecurity Professional</div>
+      <h1 class="hero-name">
+        <span class="glitch" data-text="Sugam">Sugam</span><br>
+        <span class="line2">Dangal</span>
+      </h1>
+      <p class="hero-title">Security Operations · Threat Intelligence · Penetration Testing</p>
+      <p class="hero-desc">
+        A detail-oriented cybersecurity enthusiast with hands-on experience in vulnerability assessment,
+        penetration testing, and security operations. Currently working as a SOC & Cyber Threat Intelligence
+        Analyst at Vairav Technologies.
+      </p>
+      <div>
+        <span class="terminal-tag">SIEM</span>
+        <span class="terminal-tag">Incident Response</span>
+        <span class="terminal-tag">Threat Hunting</span>
+        <span class="terminal-tag">Web App Security</span>
+      </div>
+      <div class="hero-actions" style="margin-top:2rem">
+        <a href="#experience" class="btn btn-primary">View Experience</a>
+        <a href="#contact" class="btn btn-ghost">Get In Touch</a>
+      </div>
+      <div class="hero-contacts">
+        <a href="mailto:dangalsugam@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+        <a href="https://github.com/profsug" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/sugam-dangal-79717021b/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://twitter.com/sugamdangal52" target="_blank" title="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+        <a href="tel:+9779803410515" title="Phone"><i class="fas fa-phone"></i></a>
+      </div>
+    </div>
+    <div class="hero-photo-wrap">
+      <div class="hero-photo-frame">
+        <img src="assets/images/profile-photo-cutout.png" alt="Portrait of Sugam Dangal" class="hero-photo">
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span>scroll</span>
+  </div>
+</section>
+
+<!-- TOOLS MARQUEE -->
+<div class="tools-marquee">
+  <div class="marquee-track" id="marqueeTrack">
+    <!-- items duplicated by JS -->
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-header reveal">
+    <span class="section-num">01</span>
+    <h2 class="section-title">About Me</h2>
+    <span class="section-line"></span>
+  </div>
+  <div class="about-grid">
+    <div class="about-text reveal">
+      <p>I'm a passionate cybersecurity professional based in Kathmandu, Nepal, specializing in security operations, threat intelligence, and vulnerability research.</p>
+      <blockquote class="about-highlight">
+        "Motivated to learn and grow in the field, with a collaborative mindset and a focus on delivering effective solutions."
+      </blockquote>
+      <p>With experience spanning SOC operations, independent security research on Intigriti's bug bounty platform, and a strong academic foundation from London Metropolitan University, I bring a well-rounded perspective to security challenges.</p>
+      <p style="margin-top:1rem">I work across the full security lifecycle — from proactive threat hunting and SIEM monitoring to incident response and detailed vulnerability reporting.</p>
+    </div>
+    <div class="about-stats reveal">
+      <div class="stat-item">
+        <div class="stat-num">3+</div>
+        <div class="stat-label">Years Experience</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">10+</div>
+        <div class="stat-label">SIEM Platforms</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">4</div>
+        <div class="stat-label">Certifications</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">MSc</div>
+        <div class="stat-label">Cybersecurity</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-header reveal">
+    <span class="section-num">02</span>
+    <h2 class="section-title">Experience</h2>
+    <span class="section-line"></span>
+  </div>
+  <div class="exp-list reveal" id="expList">
+
+    <div class="exp-item active" onclick="toggleExp(this)">
+      <div class="exp-header">
+        <div class="exp-icon"><i class="fas fa-shield-halved"></i></div>
+        <div class="exp-meta">
+          <div class="exp-role">SOC & Cyber Threat Intelligence Analyst</div>
+          <div class="exp-company">Vairav Technologies</div>
+          <div class="exp-loc"><i class="fas fa-location-dot" style="font-size:0.6rem;margin-right:0.3rem"></i> Kathmandu, Nepal</div>
         </div>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-    </body>
+        <div class="exp-date">
+          <div class="exp-current"><span class="status-dot" style="background:var(--accent2)"></span> Current</div>
+          <div style="margin-top:0.4rem">Jun 2025 – Present</div>
+          <i class="fas fa-chevron-down exp-chevron"></i>
+        </div>
+      </div>
+      <div class="exp-body">
+        <div class="exp-divider"></div>
+        <ul class="exp-bullets">
+          <li>Monitor and analyze security alerts and incidents using SIEM tools to identify potential threats and vulnerabilities.</li>
+          <li>Use Logpoint, Microsoft Sentinel, Microsoft Defender, IBM QRadar, Google Cloud Security, Wazuh, ELK and Vairav CTMS for security monitoring.</li>
+          <li>Perform incident triage, root cause analysis and coordinate timely response to mitigate security incidents.</li>
+          <li>Create visualizations and dashboards to enhance visibility and reduce false positives.</li>
+          <li>Investigate latest threats and prepare security advisory reports.</li>
+          <li>Maintain and update MISP feed for better threat prevention.</li>
+          <li>Investigate and provide findings on latest Indicators of Compromise (IOCs).</li>
+          <li>Collaborate with cross-functional teams to strengthen security posture and improve response efficiency.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item" onclick="toggleExp(this)">
+      <div class="exp-header">
+        <div class="exp-icon"><i class="fas fa-bug"></i></div>
+        <div class="exp-meta">
+          <div class="exp-role">Security Researcher</div>
+          <div class="exp-company">Intigriti</div>
+          <div class="exp-loc"><i class="fas fa-globe" style="font-size:0.6rem;margin-right:0.3rem"></i> Remote</div>
+        </div>
+        <div class="exp-date">
+          <div>Jan 2024 – Jun 2025</div>
+          <i class="fas fa-chevron-down exp-chevron"></i>
+        </div>
+      </div>
+      <div class="exp-body">
+        <div class="exp-divider"></div>
+        <ul class="exp-bullets">
+          <li>Conducted independent vulnerability assessments on various web applications, APIs, and networks to identify security flaws.</li>
+          <li>Exploited identified vulnerabilities, including OWASP Top 10, to demonstrate potential impact.</li>
+          <li>Collaborated with development teams to provide detailed reports, including proof-of-concept (PoC) and recommendations for remediation.</li>
+          <li>Utilized Burp Suite, OWASP ZAP, Wireshark and custom scripts to uncover security weaknesses.</li>
+          <li>Consistently stayed updated on the latest vulnerability trends, attack vectors, and security best practices.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item" onclick="toggleExp(this)">
+      <div class="exp-header">
+        <div class="exp-icon"><i class="fas fa-display"></i></div>
+        <div class="exp-meta">
+          <div class="exp-role">SOC Analyst Intern</div>
+          <div class="exp-company">Vairav Technologies</div>
+          <div class="exp-loc"><i class="fas fa-location-dot" style="font-size:0.6rem;margin-right:0.3rem"></i> Kathmandu, Nepal</div>
+        </div>
+        <div class="exp-date">
+          <div>Sep 2022 – Jan 2023</div>
+          <i class="fas fa-chevron-down exp-chevron"></i>
+        </div>
+      </div>
+      <div class="exp-body">
+        <div class="exp-divider"></div>
+        <ul class="exp-bullets">
+          <li>Installed and configured Wazuh SIEM for monitoring event logs.</li>
+          <li>Installed and configured ELK stack for log analytics and SIEM.</li>
+          <li>Monitored and analyzed security alerts and incidents using SIEM tools.</li>
+          <li>Assisted in the investigation and response to security incidents, including malware infections, phishing attempts, and unauthorized access.</li>
+          <li>Participated in threat intelligence gathering and analysis to stay updated on the latest cyber threats.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item" onclick="toggleExp(this)">
+      <div class="exp-header">
+        <div class="exp-icon"><i class="fas fa-server"></i></div>
+        <div class="exp-meta">
+          <div class="exp-role">IT Administrator</div>
+          <div class="exp-company">Madan Bhandari Memorial College</div>
+          <div class="exp-loc"><i class="fas fa-location-dot" style="font-size:0.6rem;margin-right:0.3rem"></i> Kathmandu, Nepal</div>
+        </div>
+        <div class="exp-date">
+          <div>Oct 2022 · Short-term</div>
+          <i class="fas fa-chevron-down exp-chevron"></i>
+        </div>
+      </div>
+      <div class="exp-body">
+        <div class="exp-divider"></div>
+        <ul class="exp-bullets">
+          <li>Managed and updated existing hardware and software systems to ensure optimal performance and compatibility.</li>
+          <li>Troubleshot LAN network issues, identified root causes, and provided effective remediation recommendations.</li>
+          <li>Implemented access control mechanisms to secure network and system resources.</li>
+          <li>Performed system hardening procedures to mitigate security vulnerabilities.</li>
+          <li>Monitored network performance and security, taking proactive measures to prevent potential issues.</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-header reveal">
+    <span class="section-num">03</span>
+    <h2 class="section-title">Skills</h2>
+    <span class="section-line"></span>
+  </div>
+  <div class="skills-grid">
+
+    <div class="skill-card reveal">
+      <div class="skill-icon"><i class="fas fa-eye"></i></div>
+      <div class="skill-name">Security Monitoring</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Firewall</span>
+        <span class="skill-tag">Active Directory</span>
+        <span class="skill-tag">WAF</span>
+        <span class="skill-tag">Webserver</span>
+        <span class="skill-tag">Database Server</span>
+        <span class="skill-tag">Email Server</span>
+        <span class="skill-tag">CrowdStrike</span>
+      </div>
+    </div>
+
+    <div class="skill-card reveal">
+      <div class="skill-icon"><i class="fas fa-crosshairs"></i></div>
+      <div class="skill-name">Threat Hunting</div>
+      <div class="skill-tags">
+        <span class="skill-tag">IOC Investigation</span>
+        <span class="skill-tag">Credential Monitoring</span>
+        <span class="skill-tag">Dark Web Monitoring</span>
+        <span class="skill-tag">MISP</span>
+        <span class="skill-tag">MITRE ATT&CK</span>
+      </div>
+    </div>
+
+    <div class="skill-card reveal">
+      <div class="skill-icon"><i class="fas fa-network-wired"></i></div>
+      <div class="skill-name">Network Security</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Network Assessment</span>
+        <span class="skill-tag">Traffic Analysis</span>
+        <span class="skill-tag">Wireshark</span>
+        <span class="skill-tag">Reporting</span>
+      </div>
+    </div>
+
+    <div class="skill-card reveal">
+      <div class="skill-icon"><i class="fas fa-bolt"></i></div>
+      <div class="skill-name">Incident Response</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Incident Investigation</span>
+        <span class="skill-tag">Root Cause Analysis</span>
+        <span class="skill-tag">Triage</span>
+        <span class="skill-tag">Containment</span>
+      </div>
+    </div>
+
+    <div class="skill-card reveal">
+      <div class="skill-icon"><i class="fas fa-globe"></i></div>
+      <div class="skill-name">Web App Security</div>
+      <div class="skill-tags">
+        <span class="skill-tag">OWASP Top 10</span>
+        <span class="skill-tag">Burp Suite</span>
+        <span class="skill-tag">OWASP ZAP</span>
+        <span class="skill-tag">POC Writing</span>
+        <span class="skill-tag">API Testing</span>
+      </div>
+    </div>
+
+    <div class="skill-card reveal skill-card-wide">
+      <div class="skill-icon"><i class="fas fa-chart-line"></i></div>
+      <div class="skill-name">SIEM Platforms</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Logpoint</span>
+        <span class="skill-tag">Microsoft Sentinel</span>
+        <span class="skill-tag">Microsoft Defender</span>
+        <span class="skill-tag">IBM QRadar</span>
+        <span class="skill-tag">Google Cloud Security</span>
+        <span class="skill-tag">Wazuh</span>
+        <span class="skill-tag">ELK</span>
+        <span class="skill-tag">Vairav CTMS</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <div class="section-header reveal">
+    <span class="section-num">04</span>
+    <h2 class="section-title">Certifications</h2>
+    <span class="section-line"></span>
+  </div>
+  <div class="certs-grid">
+
+    <div class="cert-card reveal">
+      <div class="cert-badge"><i class="fas fa-terminal"></i></div>
+      <div class="cert-abbr">eJPTv2 · eLearnSecurity</div>
+      <div class="cert-title">Junior Penetration Tester</div>
+      <div class="cert-desc">Network and web application penetration testing, covering enumeration, exploitation, and reporting.</div>
+    </div>
+
+    <div class="cert-card reveal">
+      <div class="cert-badge"><i class="fas fa-lock"></i></div>
+      <div class="cert-abbr">CC · ISC²</div>
+      <div class="cert-title">Certified in Cybersecurity</div>
+      <div class="cert-desc">Cybersecurity fundamentals, security principles, incident response, and best practices.</div>
+    </div>
+
+    <div class="cert-card reveal">
+      <div class="cert-badge"><i class="fas fa-network-wired"></i></div>
+      <div class="cert-abbr">CyberOps · Cisco</div>
+      <div class="cert-title">CyberOps Associate</div>
+      <div class="cert-desc">Security operations center workflows, threat analysis, and network intrusion analysis.</div>
+    </div>
+
+    <div class="cert-card reveal">
+      <div class="cert-badge"><i class="fab fa-aws"></i></div>
+      <div class="cert-abbr">AWS Academy Graduate</div>
+      <div class="cert-title">Cloud Computing & Security</div>
+      <div class="cert-desc">Cloud infrastructure fundamentals, AWS services, and cloud security principles.</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="section-header reveal">
+    <span class="section-num">05</span>
+    <h2 class="section-title">Education</h2>
+    <span class="section-line"></span>
+  </div>
+  <div class="edu-list">
+
+    <div class="edu-item reveal">
+      <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+      <div>
+        <div class="edu-degree">MSc IT in CyberSecurity</div>
+        <div class="edu-school">London Metropolitan University · Islington College</div>
+        <div class="edu-date-loc">
+          <span><i class="fas fa-calendar" style="margin-right:0.3rem;font-size:0.6rem"></i>Feb 2024 – Present</span>
+          <span><i class="fas fa-location-dot" style="margin-right:0.3rem;font-size:0.6rem"></i>Kathmandu, Nepal</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="edu-item reveal">
+      <div class="edu-icon"><i class="fas fa-university"></i></div>
+      <div>
+        <div class="edu-degree">BSc (Hons) Networking & IT Security</div>
+        <div class="edu-school">London Metropolitan University · Islington College</div>
+        <div class="edu-date-loc">
+          <span><i class="fas fa-calendar" style="margin-right:0.3rem;font-size:0.6rem"></i>Mar 2021 – Sep 2023</span>
+          <span><i class="fas fa-location-dot" style="margin-right:0.3rem;font-size:0.6rem"></i>Kathmandu, Nepal</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="edu-item reveal">
+      <div class="edu-icon"><i class="fas fa-school"></i></div>
+      <div>
+        <div class="edu-degree">10+2 — Computer Science</div>
+        <div class="edu-school">United Academy</div>
+        <div class="edu-date-loc">
+          <span><i class="fas fa-calendar" style="margin-right:0.3rem;font-size:0.6rem"></i>Jul 2018 – Mar 2020</span>
+          <span><i class="fas fa-location-dot" style="margin-right:0.3rem;font-size:0.6rem"></i>Lalitpur, Nepal</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- AWARDS -->
+<section id="awards">
+  <div class="section-header reveal">
+    <span class="section-num">06</span>
+    <h2 class="section-title">Awards</h2>
+    <span class="section-line"></span>
+  </div>
+  <div class="award-card reveal">
+    <div class="award-icon-wrap">🏆</div>
+    <div>
+      <div class="award-title">AAA Scholarship 2024</div>
+      <div class="award-org">Islington College — Academics, Attendance & Attitude</div>
+      <div class="award-desc">Scholarship awarded for 3rd Year BSc (Hons) Computer Networking & IT Security in recognition of outstanding academic performance, consistent attendance, and positive attitude.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" style="max-width:100%; padding:0">
+  <div class="contact-shell">
+    <div class="contact-grid">
+      <div class="contact-text">
+        <div class="section-header" style="margin-bottom:1rem">
+          <span class="section-num">07</span>
+          <h2 class="section-title">Let's Connect</h2>
+        </div>
+        <p class="contact-sub">
+          Open to new opportunities, collaborations, and conversations about cybersecurity. Whether it's a job opportunity, a research project, or just a chat about the latest threats — reach out.
+        </p>
+        <a href="mailto:dangalsugam@gmail.com" class="btn btn-primary" style="display:inline-flex;align-items:center;gap:0.5rem">
+          <i class="fas fa-paper-plane"></i> Send a Message
+        </a>
+      </div>
+      <div class="contact-links">
+        <a href="mailto:sugamdangal32@gmail.com" class="contact-link">
+          <i class="fas fa-envelope"></i>
+          sugamdangal32@gmail.com
+        </a>
+        <a href="https://github.com/profsug" target="_blank" class="contact-link">
+          <i class="fab fa-github"></i>
+          github.com/profsug
+        </a>
+        <a href="https://linkedin.com/in/sugam-dangal-79717021b/" target="_blank" class="contact-link">
+          <i class="fab fa-linkedin"></i>
+          /sugam-dangal-79717021b
+        </a>
+        <a href="https://twitter.com/sugamdangal52" target="_blank" class="contact-link">
+          <i class="fab fa-x-twitter"></i>
+          @sugamdangal52
+        </a>
+        <a class="contact-link" style="pointer-events:none">
+          <i class="fas fa-location-dot"></i>
+          Kathmandu, Nepal
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Sugam Dangal · Crafted with precision · Kathmandu, Nepal</p>
+</footer>
+
+<script>
+  // Custom cursor
+  const cursor = document.getElementById('cursor');
+  const ring = document.getElementById('cursor-ring');
+  let mx = 0, my = 0, rx = 0, ry = 0;
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    cursor.style.left = mx + 'px';
+    cursor.style.top = my + 'px';
+  });
+  function animateRing() {
+    rx += (mx - rx) * 0.12;
+    ry += (my - ry) * 0.12;
+    ring.style.left = rx + 'px';
+    ring.style.top = ry + 'px';
+    requestAnimationFrame(animateRing);
+  }
+  animateRing();
+
+  document.querySelectorAll('a, button, .exp-item, .skill-card, .cert-card').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      cursor.style.width = '20px';
+      cursor.style.height = '20px';
+      ring.style.width = '60px';
+      ring.style.height = '60px';
+      ring.style.opacity = '0.8';
+    });
+    el.addEventListener('mouseleave', () => {
+      cursor.style.width = '12px';
+      cursor.style.height = '12px';
+      ring.style.width = '40px';
+      ring.style.height = '40px';
+      ring.style.opacity = '0.5';
+    });
+  });
+
+  // Marquee tools
+  const tools = [
+    'Microsoft Sentinel','IBM QRadar','Wazuh','ELK Stack','Logpoint',
+    'CrowdStrike','Burp Suite','OWASP ZAP','Wireshark','MISP','MITRE ATT&CK',
+    'Google SecOps','Microsoft Defender','Nmap','Metasploit','Kali Linux',
+    'Splunk','Velociraptor','YARA','OpenCTI','TheHive'
+  ];
+  const track = document.getElementById('marqueeTrack');
+  const doubled = [...tools, ...tools];
+  track.innerHTML = doubled.map(t =>
+    `<span class="marquee-item"><span></span>${t}</span>`
+  ).join('');
+
+  // Accordion
+  function toggleExp(el) {
+    const isActive = el.classList.contains('active');
+    document.querySelectorAll('.exp-item').forEach(i => i.classList.remove('active'));
+    if (!isActive) el.classList.add('active');
+  }
+
+  // Reveal on scroll
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+
+  // Active nav link on scroll
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 200) current = s.id;
+    });
+    navLinks.forEach(a => {
+      a.style.color = a.getAttribute('href') === '#' + current
+        ? 'var(--accent)' : '';
+    });
+  });
+</script>
+</body>
 </html>
